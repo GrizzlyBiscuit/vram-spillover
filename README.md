@@ -6,10 +6,10 @@ Token-level spillover for llama-server: when VRAM pressure crosses the line, the
 
 | Run | Tokens before handoff | Tokens after handoff | Total | Handoff latency | Fallback tok/s |
 |-----|----------------------|----------------------|-------|-----------------|----------------|
-| proof | 49 | 249 | 298 | 2.724s cold / 0.444s warm | 32.9 |
-| repeat1 | 67 | 553 | 620 | 25.8s | 32.9 |
-| repeat2 | 68 | 553 | 621 | 23.2s | 32.9 |
-| control | — | — | 657 | 34.0s | — |
+| proof | 49 | 200 | 249 | 254ms | 32.9 |
+| repeat1 | 67 | 553 | 620 | 2.724s cold | 32.9 |
+| repeat2 | 68 | 553 | 621 | 0.444s warm | 32.9 |
+| control | — | — | 657 | — | — |
 
 Handoff marks on proof chart: 49 / 67 / 68 tokens before fallback takes over.
 
@@ -34,7 +34,7 @@ Live on `:8090`.
 - Units active: `spillover-watcher.service`, `spillover-proxy.service`, `spillover-failopen.service`
 - Battery-proven config: `--high-water 0.95 --low-water 0.85 --confirm 3`
 - Fallback: `:8080` (Kev-4B-GGUF)
-- Primary: `:8081` (Qwen3.6-35B-A3B main + Kev-4B draft)
+- Primary: `:8081` (Qwen3.6-35B-A3B; speculative decoding inactive)
 
 ## Split note
 

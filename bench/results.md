@@ -1,18 +1,25 @@
 # Spillover Bench Results
 
-## Proof run 1 (battery.log.run1)
-- handoff: 67 tokens / 231 chars
-- stream_end: 620 tokens / 2403 chars
-- post-handoff: 553 tokens / 2172 chars
+## Proof run
+- before handoff: 49 tokens
+- after handoff: 200 tokens
+- total: 249 tokens
+- re-prefill: 254ms
+- finish_reason: stop
+
+## Repeat1 (battery.log.run1)
+- before handoff: 67 tokens / 231 chars
+- after handoff: 553 tokens / 2172 chars
+- total: 620 tokens / 2403 chars
 - elapsed: 25.8s
 - fallback throughput: 32.9 tok/s
 - models: Kev-4B-GGUF + qwen3.6-35b-spec-pair-q8
 - finish_reason: stop
 
-## Proof run 2 (battery2.log)
-- handoff: 68 tokens / 232 chars
-- stream_end: 621 tokens / 2404 chars
-- post-handoff: 553 tokens / 2172 chars
+## Repeat2 (battery2.log)
+- before handoff: 68 tokens / 232 chars
+- after handoff: 553 tokens / 2172 chars
+- total: 621 tokens / 2404 chars
 - elapsed: 23.2s
 - fallback throughput: 32.9 tok/s
 - models: Kev-4B-GGUF + qwen3.6-35b-spec-pair-q8
