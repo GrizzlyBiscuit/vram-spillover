@@ -1,4 +1,5 @@
 # The generation that didn't die
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Token-level spillover for llama-server: when VRAM pressure crosses the line, the proxy replays the prefix into a fallback instance and keeps the client's connection open. The same session continues on a second model — no client-side change.
 
